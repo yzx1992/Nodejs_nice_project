@@ -1,0 +1,23 @@
+{
+  "name": "new_weixinqiang",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "qs": "~6.2.0",
+    "tmpl": "~1.0.4",
+    "xml2js": "~0.4.16",
+    "express": "~4.13.4",
+    "ws": "~1.1.0",
+    "request": "~2.72.0",
+    "promise": "~7.1.1",
+    "fs": "0.0.2",
+    "later": "~1.2.0",
+    "https": "~1.0.0"
+  }
+}
