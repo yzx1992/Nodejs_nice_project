@@ -1,0 +1,34 @@
+建立base_table
+create table base_table(
+   id INT NOT NULL AUTO_INCREMENT,
+   teacherName VARCHAR(64) ,
+   courseNumber VARCHAR(64),
+   PRIMARY KEY ( id )
+);
+插入一条信息，tip.jpg第一张图，用到这里插入的openId与课程号判断是否能获取签到码。
+insert base_table(teacherName,courseNumber) VALUES('your openId','课程号');
+
+
+建立rand_table
+create table rand_table(
+   id INT NOT NULL AUTO_INCREMENT,
+   teacherName VARCHAR(64) ,
+   courseNumber VARCHAR(64),
+   dateNow VARCHAR(64),
+   resultMessage VARCHAR(64),
+   tag VARCHAR(64),
+   PRIMARY KEY ( id )
+);
+
+
+建立mid_save_table
+create table mid_save_table(
+   id INT NOT NULL AUTO_INCREMENT,
+   courseNumber VARCHAR(64),
+   studentOpenId VARCHAR(64),
+   resultMessage VARCHAR(64),
+   studentTag VARCHAR(64),
+   PRIMARY KEY ( id )
+);
+
+

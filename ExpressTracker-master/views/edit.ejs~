@@ -1,0 +1,36 @@
+<%- include header %>
+<div class="hd">
+    <h1 class="page_title">快递帮帮取</h1>
+</div>
+<div class="weui_cells_title">请填写收件人信息</div>
+    <form class="weui_cells weui_cells_form" id="edit_form" method="post" action="/edit?msgid=<%= msg.id %>">
+        <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="text" name="username" value="<%= msg.usrname%>"/>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label">地址</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="text" name="adress" value="<%= msg.address%>"/>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label">快递公司</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="text" name="company" value="<%= msg.company%>"/>
+            </div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label">手机号</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="number" pattern="[0-9]*" value="<%= msg.telephone%>"/>
+            </div>
+        </div>
+        <div class="button_bar" id="button<%= msg.id%>">
+            <a href="javascript:void(0);" onclick="document.getElementById('edit_form').submit()" class="btn_bar weui_btn_primary">保存</a>
+            <a href="/delete?msgid=<%= msg.id%>"class="btn_bar weui_btn_warn">删除</a>
+		</div>     
+    </form>
+<%- include footer %>

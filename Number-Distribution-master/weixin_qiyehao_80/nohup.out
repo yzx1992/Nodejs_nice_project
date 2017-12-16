@@ -1,0 +1,152 @@
+config.token yezhen
+config.corpId wx1d3765eb45497a18
+Server running at port:5003
+query= msg_signature=b3f0415fb3846269307a5a7dee0a890071e67a31&timestamp=1465526084&nonce=647999923
+params= { msg_signature: 'b3f0415fb3846269307a5a7dee0a890071e67a31',
+  timestamp: '1465526084',
+  nonce: '647999923' }
+postdata=  <xml><ToUserName><![CDATA[wx1d3765eb45497a18]]></ToUserName>
+<Encrypt><![CDATA[dji99aAEWOgcT9QsS6bk9gtT8s3pd6oAx3auEv8l2F0azy3hAbL6FwSvP4qA+115ehXEzokfa/0tr9NEf5Ref41SbayUA3sRgH5DRVpGoKfV8ovH1hqg3RNsdosnuqr4V+u444ZvfmHcve405cr5Cdj+oeVyGK4ugAqkfoZmhzU4vLRHWbFV9S0iu30xhSqcyDysYlgR4rEdjjFJLL0RWR0dSsXnfSuh6zXOYx6JcX7ANy3WyMlu/vTU3wcDg3ylpWW7totMnjnHKvOrkvqgV9v8VJY548ZzptygSjgrrG+n0oc4AFomSyb9dIlrrPI3UMhQhBWMQM3zv1mYDEFmBs2SBhOPUemQcFQKTVJCddemYb0WANtNsV/lzZybGNoSUSsf6/Z0Dhyw2z/DFCYPJJC8zPrr/tIcRtMXpUl2vVSlSagzI/VpAf3ZLXqD+L+7bbtmyi5xOB5QxDDuiQIVaA==]]></Encrypt>
+<AgentID><![CDATA[47]]></AgentID>
+</xml>
+result=  { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     Encrypt: [ 'dji99aAEWOgcT9QsS6bk9gtT8s3pd6oAx3auEv8l2F0azy3hAbL6FwSvP4qA+115ehXEzokfa/0tr9NEf5Ref41SbayUA3sRgH5DRVpGoKfV8ovH1hqg3RNsdosnuqr4V+u444ZvfmHcve405cr5Cdj+oeVyGK4ugAqkfoZmhzU4vLRHWbFV9S0iu30xhSqcyDysYlgR4rEdjjFJLL0RWR0dSsXnfSuh6zXOYx6JcX7ANy3WyMlu/vTU3wcDg3ylpWW7totMnjnHKvOrkvqgV9v8VJY548ZzptygSjgrrG+n0oc4AFomSyb9dIlrrPI3UMhQhBWMQM3zv1mYDEFmBs2SBhOPUemQcFQKTVJCddemYb0WANtNsV/lzZybGNoSUSsf6/Z0Dhyw2z/DFCYPJJC8zPrr/tIcRtMXpUl2vVSlSagzI/VpAf3ZLXqD+L+7bbtmyi5xOB5QxDDuiQIVaA==' ],
+     AgentID: [ '47' ] } }
+encrypt_data { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     Encrypt: [ 'dji99aAEWOgcT9QsS6bk9gtT8s3pd6oAx3auEv8l2F0azy3hAbL6FwSvP4qA+115ehXEzokfa/0tr9NEf5Ref41SbayUA3sRgH5DRVpGoKfV8ovH1hqg3RNsdosnuqr4V+u444ZvfmHcve405cr5Cdj+oeVyGK4ugAqkfoZmhzU4vLRHWbFV9S0iu30xhSqcyDysYlgR4rEdjjFJLL0RWR0dSsXnfSuh6zXOYx6JcX7ANy3WyMlu/vTU3wcDg3ylpWW7totMnjnHKvOrkvqgV9v8VJY548ZzptygSjgrrG+n0oc4AFomSyb9dIlrrPI3UMhQhBWMQM3zv1mYDEFmBs2SBhOPUemQcFQKTVJCddemYb0WANtNsV/lzZybGNoSUSsf6/Z0Dhyw2z/DFCYPJJC8zPrr/tIcRtMXpUl2vVSlSagzI/VpAf3ZLXqD+L+7bbtmyi5xOB5QxDDuiQIVaA==' ],
+     AgentID: [ '47' ] } }
+decrypt_xml_data:  { message: '<xml><ToUserName><![CDATA[wx1d3765eb45497a18]]></ToUserName>\n<FromUserName><![CDATA[1501210406]]></FromUserName>\n<CreateTime>1465526084</CreateTime>\n<MsgType><![CDATA[event]]></MsgType>\n<AgentID>47</AgentID>\n<Event><![CDATA[click]]></Event>\n<EventKey><![CDATA[my_student_id]]></EventKey>\n</xml>',
+  id: 'wx1d3765eb45497a18' }
+json_data:  { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     FromUserName: [ '1501210406' ],
+     CreateTime: [ '1465526084' ],
+     MsgType: [ 'event' ],
+     AgentID: [ '47' ],
+     Event: [ 'click' ],
+     EventKey: [ 'my_student_id' ] } }
+my_text:1501210406
+myServer_reply: <xml><ToUserName><![CDATA[1501210406]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime><![CDATA[1465526084462]]></CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[1501210406]]></Content><AgentID>47</AgentID></xml>
+encrypt_reply:  IwMhDaReLHwZIot9vY8rr8MbSu9MduHaB/SXdBqu362/ab9OqfCcD0B3/yMwi5dACRRv4EOdpLE+xatybucGKq9KuqxbUQuM9JcFyQxbpe0OI3CIUuCPUFwRIPY1mMsL7dmzg1Ux/8/jBjo2Og5aBkw2GmbtNANWI0RULlB0uHVZc9SSI3jXwP8HUjUKq6/h1MEUvhVrH5W6MiBpt0JRICNBnwc1iP/FBMRv7rU9sqIMREep//lK+vQW7dN7x7lPcHP+knHoTpCkqsoftkvt++uZzz9/4HMsL7px0V5nGmcnz+sEboWQ1BlSNTKn9Lcd2FMIt492YCUpFSr9iYYrda8efz5A3MfvabLQRdHhznAgKnpP2pUwGehChhLqaGpOVBxJMtEp+xDNU4o9fqjgBAyQYgpKyDibHle3QqpH7L0=
+encrypt_reply_data:  <xml><Encrypt><![CDATA[IwMhDaReLHwZIot9vY8rr8MbSu9MduHaB/SXdBqu362/ab9OqfCcD0B3/yMwi5dACRRv4EOdpLE+xatybucGKq9KuqxbUQuM9JcFyQxbpe0OI3CIUuCPUFwRIPY1mMsL7dmzg1Ux/8/jBjo2Og5aBkw2GmbtNANWI0RULlB0uHVZc9SSI3jXwP8HUjUKq6/h1MEUvhVrH5W6MiBpt0JRICNBnwc1iP/FBMRv7rU9sqIMREep//lK+vQW7dN7x7lPcHP+knHoTpCkqsoftkvt++uZzz9/4HMsL7px0V5nGmcnz+sEboWQ1BlSNTKn9Lcd2FMIt492YCUpFSr9iYYrda8efz5A3MfvabLQRdHhznAgKnpP2pUwGehChhLqaGpOVBxJMtEp+xDNU4o9fqjgBAyQYgpKyDibHle3QqpH7L0=]]></Encrypt><MsgSignature><![CDATA[22bb2a180414c7709a30d5a3d2e0ab4d527e66ea]]></MsgSignature><TimeStamp>1465526084</TimeStamp><Nonce><![CDATA[647999923]]></Nonce></xml>
+query= msg_signature=89976ceb8f73d02c5b2f79c08d0d402f60984748&timestamp=1465526090&nonce=2028923740
+params= { msg_signature: '89976ceb8f73d02c5b2f79c08d0d402f60984748',
+  timestamp: '1465526090',
+  nonce: '2028923740' }
+postdata=  <xml><ToUserName><![CDATA[wx1d3765eb45497a18]]></ToUserName>
+<Encrypt><![CDATA[TuzTP4wmAmz/GsADbgM1+Me+vXpt9G9aPhzC29eGdJMfRorI7GcGQD9My5BUOdHkodVCeV8ljkAoy4iwdV/w6AeyMZny0YYo++AewnUQb2bcsno0k8QiHSRuc7ABhwbkmFm5VukoRJs6nhyOrmskT42r8fnTDqKeHAEWhpoTDu3MJNEgxkfXwsr5CM1U2bfJOIFf5zPYXD14HM7wgrx6TZc7kn8vu6wSO3Jg5nFYAqQ9sQcdq31h7K9IBEsMq8mZjWBpFGDCm/LJBXruVj8Pk1CEYROr2UFwqhxmUlsZ+5hvGaQyu8rgCtF5F2tQ1/F41z99k0KpbGb0tX1YbC/GXkYIlB81iZG7rkX9QIDWDM5Arq1C63UB1QuvRCXQtYrkiSMMeiexDuBMrhzpqF5EPFiqQA/hkxyChpzli6AJZ3BdyS+BUNfl+cqh3FunFKNZS+A3QgCEjsuGGOgdUmrlnA==]]></Encrypt>
+<AgentID><![CDATA[47]]></AgentID>
+</xml>
+result=  { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     Encrypt: [ 'TuzTP4wmAmz/GsADbgM1+Me+vXpt9G9aPhzC29eGdJMfRorI7GcGQD9My5BUOdHkodVCeV8ljkAoy4iwdV/w6AeyMZny0YYo++AewnUQb2bcsno0k8QiHSRuc7ABhwbkmFm5VukoRJs6nhyOrmskT42r8fnTDqKeHAEWhpoTDu3MJNEgxkfXwsr5CM1U2bfJOIFf5zPYXD14HM7wgrx6TZc7kn8vu6wSO3Jg5nFYAqQ9sQcdq31h7K9IBEsMq8mZjWBpFGDCm/LJBXruVj8Pk1CEYROr2UFwqhxmUlsZ+5hvGaQyu8rgCtF5F2tQ1/F41z99k0KpbGb0tX1YbC/GXkYIlB81iZG7rkX9QIDWDM5Arq1C63UB1QuvRCXQtYrkiSMMeiexDuBMrhzpqF5EPFiqQA/hkxyChpzli6AJZ3BdyS+BUNfl+cqh3FunFKNZS+A3QgCEjsuGGOgdUmrlnA==' ],
+     AgentID: [ '47' ] } }
+encrypt_data { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     Encrypt: [ 'TuzTP4wmAmz/GsADbgM1+Me+vXpt9G9aPhzC29eGdJMfRorI7GcGQD9My5BUOdHkodVCeV8ljkAoy4iwdV/w6AeyMZny0YYo++AewnUQb2bcsno0k8QiHSRuc7ABhwbkmFm5VukoRJs6nhyOrmskT42r8fnTDqKeHAEWhpoTDu3MJNEgxkfXwsr5CM1U2bfJOIFf5zPYXD14HM7wgrx6TZc7kn8vu6wSO3Jg5nFYAqQ9sQcdq31h7K9IBEsMq8mZjWBpFGDCm/LJBXruVj8Pk1CEYROr2UFwqhxmUlsZ+5hvGaQyu8rgCtF5F2tQ1/F41z99k0KpbGb0tX1YbC/GXkYIlB81iZG7rkX9QIDWDM5Arq1C63UB1QuvRCXQtYrkiSMMeiexDuBMrhzpqF5EPFiqQA/hkxyChpzli6AJZ3BdyS+BUNfl+cqh3FunFKNZS+A3QgCEjsuGGOgdUmrlnA==' ],
+     AgentID: [ '47' ] } }
+decrypt_xml_data:  { message: '<xml><ToUserName><![CDATA[wx1d3765eb45497a18]]></ToUserName>\n<FromUserName><![CDATA[1501210406]]></FromUserName>\n<CreateTime>1465526090</CreateTime>\n<MsgType><![CDATA[event]]></MsgType>\n<AgentID>47</AgentID>\n<Event><![CDATA[click]]></Event>\n<EventKey><![CDATA[department_ID]]></EventKey>\n</xml>',
+  id: 'wx1d3765eb45497a18' }
+json_data:  { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     FromUserName: [ '1501210406' ],
+     CreateTime: [ '1465526090' ],
+     MsgType: [ 'event' ],
+     AgentID: [ '47' ],
+     Event: [ 'click' ],
+     EventKey: [ 'department_ID' ] } }
+result.access_token= JbJRg6blWutl4z9pKcLiqtSa-UM7wfQ4eghvdKet8_jGMgkFHIGrM6kcznCE8N9W
+111result111=  { errcode: 0,
+  errmsg: 'ok',
+  userid: '1501210406',
+  name: '叶振旭',
+  department: [ 18 ],
+  mobile: '13641037664',
+  gender: '1',
+  weixinid: 'yezhenxu001',
+  avatar: 'http://shp.qpic.cn/bizmp/zlNOWW2EMAPJTNNw1McmicE9LNGMYhPtmk6wShJszfLXLoKAmY0JgEw/',
+  status: 1,
+  extattr: { attrs: [ [Object] ] } }
+user_data { errcode: 0,
+  errmsg: 'ok',
+  userid: '1501210406',
+  name: '叶振旭',
+  department: [ 18 ],
+  mobile: '13641037664',
+  gender: '1',
+  weixinid: 'yezhenxu001',
+  avatar: 'http://shp.qpic.cn/bizmp/zlNOWW2EMAPJTNNw1McmicE9LNGMYhPtmk6wShJszfLXLoKAmY0JgEw/',
+  status: 1,
+  extattr: { attrs: [ [Object] ] } }
+用户的名字：user_name： 叶振旭
+用户的手机：user_mobile： 13641037664
+用户所属部门ID：user_departmentId： 18
+my_text:该用户为：叶振旭 ; 所属部门ID=18
+myServer_reply: <xml><ToUserName><![CDATA[1501210406]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime><![CDATA[1465526090914]]></CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[该用户为：叶振旭 ; 所属部门ID=18]]></Content><AgentID>47</AgentID></xml>
+encrypt_reply:  SUh+/nPuTq9dYRjl4LLtpa6plI+zifcBqVOJ7U7czqZPhuj5xS9EtVs2kHloffvhAROn9kfbk3mOoQXS6fhslSNCpyYjdpbKZhEcmf0NKoM8XIeMDk2nUWbRcWDbboVuOgVvtMKUCH7MTF3atRUu0czxOxlhspbY4rTFHY19zyZmCz+0qwBpUsnZsc95k8YH/2jUoXBoJq65shouWokV8XS+Ix0utMHKhEhBmNDFjDZ8Dp0iSVeN1Omf69bCEwjR9QqvAC5cWy9yy3hpL9v6LPOWlcwIFx0z0DaAGWpahM6YNvnQyXaJVuF2PoxE64HjkiYs+NBP3714WCqC1YGHTNYF9tlxo+AepcgNpApdwNytfqeKFP9Evocp1T8LegKVwmN+IpAozFlQHhOnY5wNygD4ZeNSo8GGGY8eQHep1q60YCU4lnp7+91VIMDnKslRwUGGdEUbXLknehX72lRUBw==
+encrypt_reply_data:  <xml><Encrypt><![CDATA[SUh+/nPuTq9dYRjl4LLtpa6plI+zifcBqVOJ7U7czqZPhuj5xS9EtVs2kHloffvhAROn9kfbk3mOoQXS6fhslSNCpyYjdpbKZhEcmf0NKoM8XIeMDk2nUWbRcWDbboVuOgVvtMKUCH7MTF3atRUu0czxOxlhspbY4rTFHY19zyZmCz+0qwBpUsnZsc95k8YH/2jUoXBoJq65shouWokV8XS+Ix0utMHKhEhBmNDFjDZ8Dp0iSVeN1Omf69bCEwjR9QqvAC5cWy9yy3hpL9v6LPOWlcwIFx0z0DaAGWpahM6YNvnQyXaJVuF2PoxE64HjkiYs+NBP3714WCqC1YGHTNYF9tlxo+AepcgNpApdwNytfqeKFP9Evocp1T8LegKVwmN+IpAozFlQHhOnY5wNygD4ZeNSo8GGGY8eQHep1q60YCU4lnp7+91VIMDnKslRwUGGdEUbXLknehX72lRUBw==]]></Encrypt><MsgSignature><![CDATA[6c52ea6aff87245398755031b7f43a0caa66a76d]]></MsgSignature><TimeStamp>1465526090</TimeStamp><Nonce><![CDATA[2028923740]]></Nonce></xml>
+query= msg_signature=7ef5f3d9d3333042229a545bb2963d68c201bd2e&timestamp=1465526292&nonce=1638281833
+params= { msg_signature: '7ef5f3d9d3333042229a545bb2963d68c201bd2e',
+  timestamp: '1465526292',
+  nonce: '1638281833' }
+postdata=  <xml><ToUserName><![CDATA[wx1d3765eb45497a18]]></ToUserName>
+<Encrypt><![CDATA[cyGiPx0v0VlOQeiHn3l4sl8KqP0DHlaLCQR1wki67Fgm4swLZ3rII3TjNB8ilJwVpNwpTT1bk5CNZYixtA3KvuykzvthH0tV+dEV/4z9/6Awf7YOyVz4IkzVkdOQA9Vdit8s2QrCqVdD+9o7kFT4cpgdKHABHBvyPTSLZsKQSvwSrFBB7GHd+30MG14NJx3kzM1Y61PENVYQ9FZ+wTMvjVApC9SHNrDByNHZBXLAAD7jKQ5BPQQW+EbhAGTZjNX12lT6Ti5QCjRDkWzUH2OHv1b7/qOJKWIiHmaVDFfmV826K0dQfeZD6yHlIacVYZfl6vWRbLo3XIoEBnMCIVL7VBI2M3VsLRay9muMMwp1XSwqjgJRSTsXdZmz30J46tbpXTINP531pH0mLPqEPblAri3qOP4UQLfrgfWCYJbvKUolMeiMRMFchkYWEulE7JGEdefC2ZKXncIkoXTnN8vgLA==]]></Encrypt>
+<AgentID><![CDATA[47]]></AgentID>
+</xml>
+result=  { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     Encrypt: [ 'cyGiPx0v0VlOQeiHn3l4sl8KqP0DHlaLCQR1wki67Fgm4swLZ3rII3TjNB8ilJwVpNwpTT1bk5CNZYixtA3KvuykzvthH0tV+dEV/4z9/6Awf7YOyVz4IkzVkdOQA9Vdit8s2QrCqVdD+9o7kFT4cpgdKHABHBvyPTSLZsKQSvwSrFBB7GHd+30MG14NJx3kzM1Y61PENVYQ9FZ+wTMvjVApC9SHNrDByNHZBXLAAD7jKQ5BPQQW+EbhAGTZjNX12lT6Ti5QCjRDkWzUH2OHv1b7/qOJKWIiHmaVDFfmV826K0dQfeZD6yHlIacVYZfl6vWRbLo3XIoEBnMCIVL7VBI2M3VsLRay9muMMwp1XSwqjgJRSTsXdZmz30J46tbpXTINP531pH0mLPqEPblAri3qOP4UQLfrgfWCYJbvKUolMeiMRMFchkYWEulE7JGEdefC2ZKXncIkoXTnN8vgLA==' ],
+     AgentID: [ '47' ] } }
+encrypt_data { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     Encrypt: [ 'cyGiPx0v0VlOQeiHn3l4sl8KqP0DHlaLCQR1wki67Fgm4swLZ3rII3TjNB8ilJwVpNwpTT1bk5CNZYixtA3KvuykzvthH0tV+dEV/4z9/6Awf7YOyVz4IkzVkdOQA9Vdit8s2QrCqVdD+9o7kFT4cpgdKHABHBvyPTSLZsKQSvwSrFBB7GHd+30MG14NJx3kzM1Y61PENVYQ9FZ+wTMvjVApC9SHNrDByNHZBXLAAD7jKQ5BPQQW+EbhAGTZjNX12lT6Ti5QCjRDkWzUH2OHv1b7/qOJKWIiHmaVDFfmV826K0dQfeZD6yHlIacVYZfl6vWRbLo3XIoEBnMCIVL7VBI2M3VsLRay9muMMwp1XSwqjgJRSTsXdZmz30J46tbpXTINP531pH0mLPqEPblAri3qOP4UQLfrgfWCYJbvKUolMeiMRMFchkYWEulE7JGEdefC2ZKXncIkoXTnN8vgLA==' ],
+     AgentID: [ '47' ] } }
+decrypt_xml_data:  { message: '<xml><ToUserName><![CDATA[wx1d3765eb45497a18]]></ToUserName>\n<FromUserName><![CDATA[1501210798]]></FromUserName>\n<CreateTime>1465526292</CreateTime>\n<MsgType><![CDATA[event]]></MsgType>\n<AgentID>47</AgentID>\n<Event><![CDATA[enter_agent]]></Event>\n<EventKey><![CDATA[]]></EventKey>\n</xml>',
+  id: 'wx1d3765eb45497a18' }
+json_data:  { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     FromUserName: [ '1501210798' ],
+     CreateTime: [ '1465526292' ],
+     MsgType: [ 'event' ],
+     AgentID: [ '47' ],
+     Event: [ 'enter_agent' ],
+     EventKey: [ '' ] } }
+query= msg_signature=d939e2a9b27e9b30731b46908920672fe86df559&timestamp=1465526295&nonce=906359316
+params= { msg_signature: 'd939e2a9b27e9b30731b46908920672fe86df559',
+  timestamp: '1465526295',
+  nonce: '906359316' }
+postdata=  <xml><ToUserName><![CDATA[wx1d3765eb45497a18]]></ToUserName>
+<Encrypt><![CDATA[ZfgfmBxQoF9r6LAOE05V4R7QrZZkThdE1jDPp4X6qMbvow40P/jDB5UUcAhi97QQR4W8xkUVKWmbOy/TkDxyDJNz94k9H2tChlwKYU/vvMW/1d5ntwBDkvTGuk+brdA/8eQBdaCNt0zPuBDUeXrkiqFoS+eyM45CKOsRieKr+cNLZEQPoz/qBvSHeHhrtxx9k4nVZnHv5pwqCi8crJ3+aI6cJ5O0wa9usxxq4jgQA+s3PcPPPBpu3kA89e4Wexw11TcB8Uj3VPHzI25GCKkEL9QpCrza5+2Ve3cslzxNd8K5em82w4tzppG0be5ycEl0O/iZZ/Gz7MdeV0UL0naSrSwnPM7o0ZR3JrZCk5Kc/Fw4Wv+p6zKcJ90PRKyMVD4C8jvFBXgQNekuLKSWYgk+oCVhxH3NGkEAU/0KBIFI1wa39JPNAUJ40BiMMJ1xnjYVWVBuSHawkxR0STEKClb3bOXUnGGVbxprHgmJhUQdERpMgfH+ZrZkPOUMqP3R2pD4FpKkOopC+FcaH9V2h2iRvimPvbgRZmAimfK6SfL83Sg=]]></Encrypt>
+<AgentID><![CDATA[47]]></AgentID>
+</xml>
+result=  { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     Encrypt: [ 'ZfgfmBxQoF9r6LAOE05V4R7QrZZkThdE1jDPp4X6qMbvow40P/jDB5UUcAhi97QQR4W8xkUVKWmbOy/TkDxyDJNz94k9H2tChlwKYU/vvMW/1d5ntwBDkvTGuk+brdA/8eQBdaCNt0zPuBDUeXrkiqFoS+eyM45CKOsRieKr+cNLZEQPoz/qBvSHeHhrtxx9k4nVZnHv5pwqCi8crJ3+aI6cJ5O0wa9usxxq4jgQA+s3PcPPPBpu3kA89e4Wexw11TcB8Uj3VPHzI25GCKkEL9QpCrza5+2Ve3cslzxNd8K5em82w4tzppG0be5ycEl0O/iZZ/Gz7MdeV0UL0naSrSwnPM7o0ZR3JrZCk5Kc/Fw4Wv+p6zKcJ90PRKyMVD4C8jvFBXgQNekuLKSWYgk+oCVhxH3NGkEAU/0KBIFI1wa39JPNAUJ40BiMMJ1xnjYVWVBuSHawkxR0STEKClb3bOXUnGGVbxprHgmJhUQdERpMgfH+ZrZkPOUMqP3R2pD4FpKkOopC+FcaH9V2h2iRvimPvbgRZmAimfK6SfL83Sg=' ],
+     AgentID: [ '47' ] } }
+encrypt_data { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     Encrypt: [ 'ZfgfmBxQoF9r6LAOE05V4R7QrZZkThdE1jDPp4X6qMbvow40P/jDB5UUcAhi97QQR4W8xkUVKWmbOy/TkDxyDJNz94k9H2tChlwKYU/vvMW/1d5ntwBDkvTGuk+brdA/8eQBdaCNt0zPuBDUeXrkiqFoS+eyM45CKOsRieKr+cNLZEQPoz/qBvSHeHhrtxx9k4nVZnHv5pwqCi8crJ3+aI6cJ5O0wa9usxxq4jgQA+s3PcPPPBpu3kA89e4Wexw11TcB8Uj3VPHzI25GCKkEL9QpCrza5+2Ve3cslzxNd8K5em82w4tzppG0be5ycEl0O/iZZ/Gz7MdeV0UL0naSrSwnPM7o0ZR3JrZCk5Kc/Fw4Wv+p6zKcJ90PRKyMVD4C8jvFBXgQNekuLKSWYgk+oCVhxH3NGkEAU/0KBIFI1wa39JPNAUJ40BiMMJ1xnjYVWVBuSHawkxR0STEKClb3bOXUnGGVbxprHgmJhUQdERpMgfH+ZrZkPOUMqP3R2pD4FpKkOopC+FcaH9V2h2iRvimPvbgRZmAimfK6SfL83Sg=' ],
+     AgentID: [ '47' ] } }
+decrypt_xml_data:  { message: '<xml><ToUserName><![CDATA[wx1d3765eb45497a18]]></ToUserName>\n<FromUserName><![CDATA[1501210798]]></FromUserName>\n<CreateTime>1465526295</CreateTime>\n<MsgType><![CDATA[event]]></MsgType>\n<Event><![CDATA[LOCATION]]></Event>\n<Latitude>39.756710</Latitude>\n<Longitude>116.350899</Longitude>\n<Precision>40.000000</Precision>\n<AgentID>47</AgentID>\n</xml>',
+  id: 'wx1d3765eb45497a18' }
+json_data:  { xml: 
+   { ToUserName: [ 'wx1d3765eb45497a18' ],
+     FromUserName: [ '1501210798' ],
+     CreateTime: [ '1465526295' ],
+     MsgType: [ 'event' ],
+     Event: [ 'LOCATION' ],
+     Latitude: [ '39.756710' ],
+     Longitude: [ '116.350899' ],
+     Precision: [ '40.000000' ],
+     AgentID: [ '47' ] } }
+
+/home/yezhenxu/yzx_study/weixin_qiyehao_80/qiyehao.js:78
+		if (json_data.xml.MsgType[0] === 'event' && json_data.xml.EventKey[0] === 'm
+		                                                                  ^
+TypeError: Cannot read property '0' of undefined
+    at IncomingMessage.<anonymous> (/home/yezhenxu/yzx_study/weixin_qiyehao_80/qiyehao.js:78:71)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13)

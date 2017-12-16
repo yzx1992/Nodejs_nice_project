@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<!--
+Name:                   Message Wall
+Author:                 Apollo Wayne & ZYY
+Created Date:           2015.9.17
+Last Modified Date:     2016.6.13
+Used:
+    JavaScript library: jQuery https://jquery.com
+    Iconic Font:        FontAwesome http://fontawesome.io
+    iOS icon templates: iOS 8 App Icon Template http://appicontemplate.com/ios8
+Thanks to the individuals and groups who provided their helps!
+-->
+<html lang="en">
+
+<head itemscope="" itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=980, user-scalable=no">
+    <title itemprop="name">心♡愿♡树</title>
+    <meta name="Author" content="Apollo Wayne & ZYY">
+    <meta property="og:title" content="心♡愿♡树" />
+    <meta property="og:description" name="Description" content="A wish tree allows people to post their words about love and wishes.">
+    <meta property="og:url" content="http://Shinerising.github.io/">
+    <meta property="og:image" content="images/cover.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Message Wall">
+    <meta name="theme-color" content="#ABCDEF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="telephone=no" name="format-detection" />
+    <link itemprop="url" href="http://Shinerising.github.io/">
+    <link rel="home" href="http://Shinerising.github.io/">
+    <link rel="apple-touch-startup-image" href="images/start-up.png">
+    <link rel="apple-touch-icon" sizes="29x29" href="images/Icon-Small.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/Icon.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/Icon@2x.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/Icon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/Icon-60@2x.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/Icon-60@3x.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/Icon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/Icon-72@2x.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/Icon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/Icon-76@2x.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="images/iTunesArtwork@2x.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/icon_64.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="images/icon_256.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/icon_512.png">
+    <link rel="icon" type="image/png" sizes="1024x1024" href="images/icon_1024.png">
+
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/func.js"></script>
+    <script src="js/func_post.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('fonts/fontawesome-webfont.eot?v=4.4.0');
+            src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .noselect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        div {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+        
+        html {}
+        
+        body {
+            position: relative;
+            margin: 0;
+            border: none;
+            background: rgba(100, 100, 250, 1);
+            background: linear-gradient(to bottom, rgba(100, 100, 250, 1), rgba(50, 50, 120, 1));
+            background: -webkit-linear-gradient(top, rgba(100, 100, 250, 1), rgba(50, 50, 120, 1));
+        }
+        
+        #back {
+            position: absolute;
+            width: 100%;
+            min-width: 950px;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            background: rgba(180, 230, 250, 1);
+            background: linear-gradient(to bottom, rgba(180, 230, 250, 1), rgba(130, 200, 250, 1));
+            background: -webkit-linear-gradient(top, rgba(180, 230, 250, 1), rgba(130, 200, 250, 1));
+        }
+        
+        #area {
+            width: 800px;
+            margin: 0 auto;
+        }
+        
+        #main {
+            position: relative;
+        }
+        
+        #sky {}
+        
+        #sun {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            opacity: .8;
+            background: rgba(240, 200, 100, 1);
+            background: radial-gradient(rgba(240, 200, 100, 1), rgba(240, 240, 140, 1));
+            box-shadow: 0px 0px 50px rgba(240, 200, 100, 1);
+            display: none;
+        }
+        
+        #moon {
+            position: absolute;
+            left: 650px;
+            top: 100px;
+            width: 160px;
+            height: 160px;
+            mask: linear-gradient(to bottom right, rgba(1, 1, 1, .3), rgba(1, 1, 1, 1));
+            -webkit-mask: -webkit-linear-gradient(top left, rgba(1, 1, 1, .3), rgba(1, 1, 1, 1));
+            border-radius: 50%;
+            display: none;
+        }
+        
+        #moon:after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            border-right: rgba(240, 240, 250, 1) solid 30px;
+            border-bottom: rgba(240, 240, 250, 1) solid 30px;
+        }
+        
+        #test {
+            position: fixed;
+            opacity: 0;
+        }
+        
+        #test:after {
+            content: "\f005";
+            font: normal normal normal 160px/1 FontAwesome;
+        }
+        
+        #tree {
+            width: 800px;
+            margin: 0 auto;
+        }
+        
+        #tree_body {
+            width: 100%;
+            z-index: 9;
+            position: relative;
+        }
+        
+        .tree_part {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            animation: treegrow .6s;
+            -webkit-animation: treegrow .6s;
+        }
+        
+        .tree_part01 {
+            position: absolute;
+            width: 65%;
+            height: 100%;
+            left: 0;
+            border-radius: 0 0 0 50px;
+            background: rgba(120, 220, 120, 1);
+            background: linear-gradient(to bottom, rgba(120, 220, 120, 1), rgba(100, 200, 100, 1));
+            background: -webkit-linear-gradient(top, rgba(120, 220, 120, 1), rgba(100, 200, 100, 1));
+            transform: skewX(-40deg);
+            -webkit-transform: skewX(-40deg);
+        }
+        
+        .tree_part01shadow {
+            position: absolute;
+            width: 65%;
+            height: 100%;
+            left: 0;
+            border-radius: 0 0 0 50px;
+            transform: skewX(-40deg);
+            -webkit-transform: skewX(-40deg);
+            box-shadow: 0px 10px 5px rgba(100, 100, 100, .3);
+        }
+        
+        .tree_part02 {
+            position: absolute;
+            width: 65%;
+            height: 100%;
+            right: 0;
+            border-radius: 0 0 50px 0;
+            background: rgba(120, 220, 120, 1);
+            background: linear-gradient(to bottom, rgba(120, 220, 120, 1), rgba(100, 200, 100, 1));
+            background: -webkit-linear-gradient(top, rgba(120, 220, 120, 1), rgba(100, 200, 100, 1));
+            transform: skewX(40deg);
+            -webkit-transform: skewX(40deg);
+        }
+        
+        .tree_part02shadow {
+            position: absolute;
+            width: 65%;
+            height: 100%;
+            right: 0;
+            border-radius: 0 0 50px 0;
+            transform: skewX(40deg);
+            -webkit-transform: skewX(40deg);
+            box-shadow: 0px 10px 5px rgba(100, 100, 100, .3);
+        }
+        
+        #tree_head {
+            width: 100%;
+            height: 600px;
+            position: relative;
+        }
+        
+        #tree_head01 {
+            width: 60%;
+            height: 620px;
+            left: -10%;
+            position: absolute;
+            overflow: hidden;
+        }
+        
+        #tree_head02 {
+            position: absolute;
+            width: 100%;
+            height: 600px;
+            left: 53%;
+            border-radius: 200px 0 0 50px;
+            background: rgba(120, 220, 120, 1);
+            background: linear-gradient(to bottom, rgba(120, 220, 120, 1), rgba(100, 200, 100, 1));
+            background: -webkit-linear-gradient(top, rgba(120, 220, 120, 1), rgba(100, 200, 100, 1));
+            transform: skewX(-40deg);
+            -webkit-transform: skewX(-40deg);
+        }
+        
+        .tree_head02shadow {
+            position: absolute;
+            width: 100%;
+            height: 600px;
+            left: 53%;
+            border-radius: 200px 0 0 50px;
+            transform: skewX(-40deg);
+            -webkit-transform: skewX(-40deg);
+            box-shadow: 0px 10px 5px rgba(100, 100, 100, .3);
+        }
+        
+        #tree_head03 {
+            width: 60%;
+            height: 620px;
+            right: -10%;
+            position: absolute;
+            overflow: hidden;
+        }
+        
+        #tree_head04 {
+            position: absolute;
+            width: 100%;
+            height: 600px;
+            right: 53%;
+            border-radius: 0 200px 50px 0;
+            background: rgba(120, 220, 120, 1);
+            background: linear-gradient(to bottom, rgba(120, 220, 120, 1), rgba(100, 200, 100, 1));
+            background: -webkit-linear-gradient(top, rgba(120, 220, 120, 1), rgba(100, 200, 100, 1));
+            transform: skewX(40deg);
+            -webkit-transform: skewX(40deg);
+        }
+        
+        .tree_head04shadow {
+            position: absolute;
+            width: 100%;
+            height: 600px;
+            right: 53%;
+            border-radius: 0 200px 50px 0;
+            transform: skewX(40deg);
+            -webkit-transform: skewX(40deg);
+            box-shadow: 0px 10px 5px rgba(100, 100, 100, .3);
+        }
+        
+        #tree_star {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            margin-bottom: -160px;
+            z-index: 10;
+            padding-left: 10px;
+            opacity: 0;
+            transition: opacity .6s;
+            -webkit-transition: opacity .6s;
+        }
+        
+        #tree_star:hover {
+            animation: rotate linear 1s infinite both;
+            -webkit-animation: rotate linear 1s infinite both;
+        }
+        
+        #tree_star:after {
+            position: absolute;
+            content: "\f005";
+            font: normal normal normal 160px/1 FontAwesome;
+            color: gold;
+            mask: linear-gradient(to bottom, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+            -webkit-mask: -webkit-linear-gradient(top, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+        }
+        
+        #tree_star:before {
+            position: absolute;
+            content: "\f005";
+            font: normal normal normal 160px/1 FontAwesome;
+            color: white;
+        }
+        
+        #tree_foot {
+            width: 30%;
+            height: 350px;
+            margin: 0 auto;
+            z-index: 10;
+            position: relative;
+        }
+        
+        .tree_foot01 {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 12%;
+            border-radius: 0 0 0 20px;
+            background: rgba(220, 160, 120, 1);
+            background: linear-gradient(to bottom, rgba(220, 160, 120, 1), rgba(200, 140, 100, 1));
+            background: -webkit-linear-gradient(top, rgba(220, 160, 120, 1), rgba(200, 140, 100, 1));
+            transform: skewX(-6deg);
+            -webkit-transform: skewX(-6deg);
+        }
+        
+        .tree_foot02 {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            right: 12%;
+            border-radius: 0 0 20px 0;
+            background: rgba(220, 160, 120, 1);
+            background: linear-gradient(to bottom, rgba(220, 160, 120, 1), rgba(200, 140, 100, 1));
+            background: -webkit-linear-gradient(top, rgba(220, 160, 120, 1), rgba(200, 140, 100, 1));
+            transform: skewX(6deg);
+            -webkit-transform: skewX(6deg);
+        }
+        
+        .tree_foot01shadow {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 12%;
+            border-radius: 0 0 0 20px;
+            transform: skewX(-6deg);
+            -webkit-transform: skewX(-6deg);
+            box-shadow: -5px 5px 5px rgba(100, 100, 100, .3);
+        }
+        
+        .tree_foot02shadow {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            right: 12%;
+            border-radius: 0 0 20px 0;
+            transform: skewX(6deg);
+            -webkit-transform: skewX(6deg);
+            box-shadow: 5px 5px 5px rgba(100, 100, 100, .3);
+        }
+        
+        #boy {
+            width: 300px;
+            height: 300px;
+            margin-top: -300px;
+            margin-left: 68px;
+            position: relative;
+            overflow: hidden;
+            z-index: 11;
+        }
+        
+        #girl {
+            width: 300px;
+            height: 300px;
+            margin-top: -300px;
+            margin-left: 445px;
+            position: relative;
+            overflow: hidden;
+            z-index: 11;
+        }
+        
+        #boyimg,
+        #girlimg {
+            display: none;
+            width: 300px;
+            height: 300px;
+        }
+        
+        #grass {
+            position: relative;
+            width: 100%;
+            min-width: 950px;
+            height: 8vh;
+            margin-top: -8vh;
+            background: url('images/grass.svg') repeat-x;
+            z-index: 20;
+        }
+        
+        #leaves {
+            position: absolute;
+            z-index: 12;
+            left: 0px;
+            top: 0px;
+            z-index: 50;
+        }
+        
+        .leaf {
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: transform .5s;
+            -webkit-transition: -webkit-transform .5s;
+        }
+        
+        .color01:before {
+            color: rgb(30, 136, 229);
+        }
+        
+        .color02:before {
+            color: rgb(126, 87, 194);
+        }
+        
+        .color03:before {
+            color: rgb(236, 64, 122);
+        }
+        
+        .color04:before {
+            color: rgb(237, 83, 80);
+        }
+        
+        .color05:before {
+            color: rgb(255, 167, 38);
+        }
+        
+        .color06:before {
+            color: rgb(212, 225, 87);
+        }
+        
+        .color07:before {
+            color: rgb(102, 187, 106);
+        }
+        
+        .color08:before {
+            color: rgb(38, 198, 218);
+        }
+        
+        .leaf_main {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .leaf_back {
+            width: 100%;
+            height: 100%;
+            margin-bottom: -100%;
+        }
+        
+        .shape_back:before {
+            width: 100%;
+            height: 100%;
+            content: "\f004";
+            font: normal normal normal 800px/1 FontAwesome;
+            color: white;
+        }
+        
+        .shape_heart {
+            width: 100%;
+            height: 100%;
+            margin-top: -100%;
+        }
+        
+        .shape_heart:before {
+            width: 100%;
+            height: 100%;
+            content: "\f004";
+            font: normal normal normal 800px/1 FontAwesome;
+            mask: linear-gradient(to bottom, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+            -webkit-mask: -webkit-linear-gradient(top, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+            text-shadow: 0px 10px 5px rgba(100, 100, 100, .3);
+        }
+        
+        .leaf_info {
+            margin: 22% auto;
+            width: 80%;
+            overflow: hidden;
+        }
+        
+        .leaf_text {
+            text-align: center;
+            width: 100%;
+            height: 270px;
+            overflow: hidden;
+            font: normal normal normal 45px/1.2 Cursive;
+            color: rgba(0, 10, 60, .5);
+            transform: scale(0);
+            -webkit-transform: scale(0);
+            transition: transform .5s;
+            -webkit-transition: -webkit-transform .5s;
+        }
+        
+        .fullshow .leaf_text {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+        
+        .leaf_name {
+            margin: 5% auto;
+            width: 100%;
+            height: 144px;
+            overflow: hidden;
+            text-align: center;
+            font: normal normal normal 52px/1.5 Cursive;
+            color: rgba(0, 20, 100, .8);
+            transform: scale(2) translate(0px, -80px);
+            -webkit-transform: scale(2) translate(0px, -80px);
+            transition: transform .5s;
+            -webkit-transition: -webkit-transform .5s;
+        }
+        
+        .fullshow .leaf_name {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+        
+        .button_like {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            margin-top: -280px;
+            border-radius: 50%;
+            transform: scale(0);
+            mask: linear-gradient(to bottom, rgba(1, 1, 1, 1), rgba(1, 1, 1, .5));
+            -webkit-mask: -webkit-linear-gradient(top, rgba(1, 1, 1, 1), rgba(1, 1, 1, .5));
+            -webkit-transform: scale(0);
+            transition: transform .6s;
+            -webkit-transition: -webkit-transform .6s;
+        }
+        
+        .fullshow .button_like {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+        }
+        
+        .button_like:after {
+            content: "\f164";
+            width: 50%;
+            margin-left: 25%;
+            height: 100%;
+            font: normal normal normal 100px/1.6 FontAwesome;
+            text-align: center;
+            color: white;
+            text-shadow: 0px 10px 5px rgba(100, 100, 100, .3);
+        }
+        
+        .button_like:hover {
+            mask: linear-gradient(to bottom, rgba(1, 1, 1, 1), rgba(1, 1, 1, 1));
+            -webkit-mask: -webkit-linear-gradient(top, rgba(1, 1, 1, 1), rgba(1, 1, 1, 1));
+        }
+        
+        .button_like:active {
+            mask: linear-gradient(to bottom, rgba(1, 1, 1, .3), rgba(1, 1, 1, .8));
+            -webkit-mask: -webkit-linear-gradient(top, rgba(1, 1, 1, .3), rgba(1, 1, 1, .8));
+        }
+        
+        #sendbox {
+            position: fixed;
+            z-index: 100000;
+            width: 160px;
+            height: 160px;
+            right: 30px;
+            bottom: 60px;
+            cursor: pointer;
+            display: none;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0px 5px 5px rgba(100, 100, 100, .3);
+            background: rgba(250, 250, 250, 1);
+            background: linear-gradient(to bottom, rgba(250, 250, 250, 1), rgba(230, 230, 230, 1));
+            background: -webkit-linear-gradient(top, rgba(250, 250, 250, 1), rgba(230, 230, 230, 1));
+            animation: flow 0.5s 2s both;
+            -webkit-animation: flow 0.5s 2s both;
+            transform: scale(1) translate(0px, 0px);
+            -webkit-transform: scale(1) translate(0px, 0px);
+            transition: transform .6s, opacity .6s;
+            -webkit-transition: -webkit-transform .6s, opacity .6s;
+        }
+        
+        #sendbox:after {
+            content: "\f040";
+            display: block;
+            width: 100%;
+            height: 100%;
+            font: normal normal normal 100px/1.6 FontAwesome;
+            text-align: center;
+            color: gray;
+            opacity: 1;
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            transition: transform .6s;
+            -webkit-transition: -webkit-transform .6s;
+            mask: linear-gradient(to bottom, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+            -webkit-mask: -webkit-linear-gradient(top, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+        }
+        
+        #sendbox:before {
+            content: "\f110";
+            position: relative;
+            display: none;
+            width: 100%;
+            height: 100%;
+            font: normal normal normal 100px/1.6 FontAwesome;
+            text-align: center;
+            color: white;
+            animation: rotate 1s infinite steps(8);
+            -webkit-animation: rotate 1s infinite steps(8);
+        }
+        
+        #sendbox.sending:after {
+            transform: translateY(200px);
+            -webkit-transform: translateY(200px);
+        }
+        
+        #sendbox.sending:before {
+            display: block;
+        }
+        
+        #sendbox:not(.sending):hover {
+            background: rgba(255, 255, 255, 1);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(240, 240, 240, 1));
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(240, 240, 240, 1));
+            box-shadow: 0px 10px 10px rgba(100, 100, 100, .3);
+        }
+        
+        #sendbox:not(.sending):active {
+            background: rgba(240, 240, 240, 1);
+            background: linear-gradient(to bottom, rgba(230, 230, 230, 1), rgba(240, 240, 240, 1));
+            background: -webkit-linear-gradient(top, rgba(230, 230, 230, 1), rgba(240, 240, 240, 1));
+            box-shadow: 0px 5px 5px rgba(100, 100, 100, .3);
+        }
+        
+        #sendbox.expandbox {
+            transform: scale(5) translate(-70px, -50px);
+            -webkit-transform: scale(5) translate(-70px, -50px);
+            opacity: 0;
+        }
+        
+        #sendbox.sending {
+            background: rgba(150, 150, 150, 1);
+        }
+        
+        #sendleaf {
+            position: fixed;
+            z-index: 100001;
+            width: 160px;
+            height: 160px;
+            right: 30px;
+            bottom: 60px;
+            transform: scale(0) translate(0px, 0px);
+            -webkit-transform: scale(0) translate(0px, 0px);
+            transition: transform .6s;
+            -webkit-transition: -webkit-transform .6s;
+        }
+        
+        #sendleaf.expandbox {
+            transform: scale(1) translate(25px, 0px);
+            -webkit-transform: scale(1) translate(25px, 0px);
+        }
+        
+        #le_send {
+            margin-top: -560px;
+            margin-left: -725px;
+        }
+        
+        #sendleaf .leaf_info {
+            position: relative;
+        }
+        
+        #input_text {
+            color: #000;
+            margin-top: 10px;
+            height: 0px;
+        }
+        
+        #input_name {
+            color: #000;
+            height: 0px;
+        }
+        
+        #send_text {
+            width: 580px;
+            height: 250px;
+            border: none;
+            background: rgba(255, 255, 255, .8);
+            box-shadow: 0px 0px 30px rgba(100, 100, 100, 1) inset;
+            border-radius: 50px;
+            padding: 10px 30px;
+            margin-top: -10px;
+            font: normal normal normal 40px/1.2 Cursive;
+            color: #555;
+            border-collapse: collapse;
+        }
+        
+        #send_name {
+            margin: 0 auto;
+            width: 400px;
+            height: 72px;
+            border: none;
+            background: rgba(255, 255, 255, .8);
+            box-shadow: 0px 0px 30px rgba(100, 100, 100, 1) inset;
+            border-radius: 50px;
+            padding: 0px 20px;
+            text-align: center;
+            font: normal normal normal 48px/1.5 Cursive;
+            color: #555;
+            border-collapse: collapse;
+        }
+        
+        #charcount01,
+        #charcount02 {
+            position: absolute;
+            font: normal normal normal 40px/1 Cursive;
+            padding: 10px;
+            border-radius: 50px;
+            background: rgba(250, 250, 250, .6);
+            text-align: center;
+            color: #888;
+            opacity: 0;
+        }
+        
+        #charcount01 {
+            right: 20px;
+            top: 200px;
+        }
+        
+        #charcount02 {
+            right: 110px;
+            top: 308px;
+        }
+        
+        #sendbuttons {
+            position: fixed;
+            z-index: 100002;
+            width: 160px;
+            height: 160px;
+            right: 30px;
+            bottom: 60px;
+            transform: scale(0) translate(0px, 0px);
+            -webkit-transform: scale(0) translate(0px, 0px);
+            transition: transform .6s;
+            -webkit-transition: -webkit-transform .6s;
+        }
+        
+        #sendbuttons.expandbox {
+            transform: scale(1) translate(25px, 0px);
+            -webkit-transform: scale(1) translate(25px, 0px);
+        }
+        
+        #sendbuttons .button {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            top: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        #button_cancel {
+            z-index: 100002;
+            width: 160px;
+            right: 720px;
+            box-shadow: 0px 5px 5px rgba(100, 100, 100, .3);
+            background: rgba(250, 150, 150, 1);
+            background: linear-gradient(to bottom, rgba(250, 150, 150, 1), rgba(230, 130, 130, 1));
+            background: -webkit-linear-gradient(top, rgba(250, 150, 150, 1), rgba(230, 130, 130, 1));
+        }
+        
+        #button_cancel:after {
+            content: "\f00d";
+            display: block;
+            width: 100%;
+            height: 100%;
+            font: normal normal normal 100px/1.6 FontAwesome;
+            text-align: center;
+            color: white;
+            mask: linear-gradient(top, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+            -webkit-mask: -webkit-linear-gradient(top, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+        }
+        
+        #button_cancel:hover {
+            background: rgba(255, 170, 170, 1);
+            background: linear-gradient(to bottom, rgba(255, 170, 170, 1), rgba(250, 150, 150, 1));
+            background: -webkit-linear-gradient(top, rgba(255, 170, 170, 1), rgba(250, 150, 150, 1));
+            box-shadow: 0px 10px 10px rgba(100, 100, 100, .3);
+        }
+        
+        #button_cancel:active {
+            background: rgba(230, 130, 130, 1);
+            background: linear-gradient(to bottom, rgba(230, 130, 130, 1), rgba(250, 150, 150, 1));
+            background: -webkit-linear-gradient(top, rgba(230, 130, 130, 1), rgba(250, 150, 150, 1));
+            box-shadow: 0px 5px 5px rgba(100, 100, 100, .3);
+        }
+        
+        #button_submit {
+            z-index: 100003;
+            width: 160px;
+            right: 90px;
+            box-shadow: 0px 5px 5px rgba(100, 100, 100, .3);
+            background: rgba(150, 250, 150, 1);
+            background: linear-gradient(to bottom, rgba(150, 250, 150, 1), rgba(130, 230, 130, 1));
+            background: -webkit-linear-gradient(top, rgba(150, 250, 150, 1), rgba(130, 230, 130, 1));
+        }
+        
+        #button_submit:after {
+            content: "\f1d8";
+            display: block;
+            width: 80%;
+            margin-left: 6%;
+            height: 100%;
+            font: normal normal normal 100px/1.6 FontAwesome;
+            text-align: center;
+            color: white;
+            mask: -webkit-linear-gradient(top, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+            -webkit-mask: -webkit-linear-gradient(top, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+        }
+        
+        #button_submit:hover {
+            background: rgba(170, 255, 170, 1);
+            background: linear-gradient(to bottom, rgba(170, 255, 170, 1), rgba(150, 250, 150, 1));
+            background: -webkit-linear-gradient(top, rgba(170, 255, 170, 1), rgba(150, 250, 150, 1));
+            box-shadow: 0px 10px 10px rgba(100, 100, 100, .3);
+        }
+        
+        #button_submit:active {
+            background: rgba(130, 220, 130, 1);
+            background: linear-gradient(to bottom, rgba(130, 220, 130, 1), rgba(150, 250, 150, 1));
+            background: -webkit-linear-gradient(top, rgba(130, 220, 130, 1), rgba(150, 250, 150, 1));
+            box-shadow: 0px 5px 5px rgba(100, 100, 100, .3);
+        }
+        
+        #notification {
+            position: fixed;
+            z-index: 100005;
+            width: 100%;
+            top: -200px;
+            text-align: center;
+            display: none;
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            animation: drop 4s;
+            -webkit-animation: drop 4s;
+        }
+        
+        #notiarea {
+            border-radius: 60px;
+            box-shadow: 0px 5px 5px rgba(100, 100, 100, .3);
+            opacity: .9;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .greenback {
+            background: rgba(200, 250, 200, 1);
+            background: linear-gradient(to bottom, rgba(200, 250, 200, 1), rgba(180, 230, 180, 1));
+            background: -webkit-linear-gradient(top, rgba(200, 250, 200, 1), rgba(180, 230, 180, 1));
+        }
+        
+        .redback {
+            background: rgba(250, 200, 200, 1);
+            background: linear-gradient(to bottom, rgba(250, 200, 200, 1), rgba(230, 180, 180, 1));
+            background: -webkit-linear-gradient(top, rgba(250, 200, 200, 1), rgba(230, 180, 180, 1));
+        }
+        
+        .silverback {
+            background: rgba(250, 250, 250, 1);
+            background: linear-gradient(to bottom, rgba(250, 250, 250, 1), rgba(230, 230, 230, 1));
+            background: -webkit-linear-gradient(top, rgba(250, 250, 250, 1), rgba(230, 230, 230, 1));
+        }
+        
+        #notiimage {
+            width: 5vh;
+            margin: 10px;
+            display: inline-block;
+            border-radius: 50%;
+            background: rgba(250, 250, 250, .5);
+            background: linear-gradient(to bottom, rgba(200, 200, 200, .5), rgba(250, 250, 250, .5));
+            background: -webkit-linear-gradient(top, rgba(200, 200, 200, .5), rgba(250, 250, 250, .5));
+        }
+        
+        #notiimage:after {
+            display: block;
+            font: normal normal normal 4vh/1.2 FontAwesome;
+            text-align: center;
+            color: rgba(100, 100, 100, 1);
+            mask: linear-gradient(to bottom, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+            -webkit-mask: -webkit-linear-gradient(top, rgba(1, 1, 1, .5), rgba(1, 1, 1, 1));
+        }
+        
+        #notimessage {
+            margin: 10px 20px 10px 0px;
+            display: inline-block;
+            font: normal normal bold 4vh/1.2 Tahoma, Geneva, sans-serif;
+            text-align: center;
+            color: rgba(100, 100, 100, 1);
+        }
+        
+        .icon_happy:after {
+            content: "\f118";
+        }
+        
+        .icon_unhappy:after {
+            content: "\f119";
+        }
+        
+        .icon_exclamation-c:after {
+            content: "\f06a";
+        }
+        
+        .icon_stop:after {
+            content: "\f256";
+        }
+        
+        .icon_bug:after {
+            content: "\f188";
+        }
+        
+        @keyframes quiver {
+            0% {
+                transform: rotate(0deg);
+            }
+            1% {
+                transform: rotate(-10deg);
+            }
+            2% {
+                transform: rotate(10deg);
+            }
+            3% {
+                transform: rotate(-10deg);
+            }
+            4% {
+                transform: rotate(0deg);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes flow {
+            from {
+                bottom: -200px;
+            }
+            to {
+                bottom: 50px;
+            }
+        }
+        
+        @keyframes drop {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            20% {
+                transform: translateY(250px);
+                opacity: 1;
+            }
+            80% {
+                transform: translateY(250px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes treegrow {
+            0% {
+                transform: scaleY(2);
+                opacity: 0;
+            }
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes rotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        @-webkit-keyframes quiver {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            1% {
+                -webkit-transform: rotate(-10deg);
+            }
+            2% {
+                -webkit-transform: rotate(10deg);
+            }
+            3% {
+                -webkit-transform: rotate(-10deg);
+            }
+            4% {
+                -webkit-transform: rotate(0deg);
+            }
+        }
+        
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes flow {
+            from {
+                bottom: -200px;
+            }
+            to {
+                bottom: 50px;
+            }
+        }
+        
+        @-webkit-keyframes drop {
+            0% {
+                -webkit-transform: translateY(0);
+                opacity: 0;
+            }
+            20% {
+                -webkit-transform: translateY(250px);
+                opacity: 1;
+            }
+            80% {
+                -webkit-transform: translateY(250px);
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                opacity: 0;
+            }
+        }
+        
+        @-webkit-keyframes treegrow {
+            0% {
+                -webkit-transform: scaleY(2);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes rotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back"></div>
+    <div id="area">
+        <div id="main">
+            <div id="sky">
+                <div id="sun"></div>
+                <div id="moon"></div>
+            </div>
+            <div id="tree">
+                <div id="tree_star"></div>
+                <div id="tree_head">
+                    <div id="tree_head01">
+                        <div class="tree_head02shadow"></div>
+                        <div id="tree_head02"></div>
+                    </div>
+                    <div id="tree_head03">
+                        <div class="tree_head04shadow"></div>
+                        <div id="tree_head04"></div>
+                    </div>
+                </div>
+                <div id="tree_body">
+                    <div class="tree_part">
+                        <div class="tree_part01shadow"></div>
+                        <div class="tree_part02shadow"></div>
+                        <div class="tree_part01"></div>
+                        <div class="tree_part02"></div>
+                    </div>
+                    <div class="tree_part">
+                        <div class="tree_part01shadow"></div>
+                        <div class="tree_part02shadow"></div>
+                        <div class="tree_part01"></div>
+                        <div class="tree_part02"></div>
+                    </div>
+                    <div class="tree_part">
+                        <div class="tree_part01shadow"></div>
+                        <div class="tree_part02shadow"></div>
+                        <div class="tree_part01"></div>
+                        <div class="tree_part02"></div>
+                    </div>
+                    <div class="tree_part">
+                        <div class="tree_part01shadow"></div>
+                        <div class="tree_part02shadow"></div>
+                        <div class="tree_part01"></div>
+                        <div class="tree_part02"></div>
+                    </div>
+                </div>
+                <div id="tree_foot">
+                    <div class="tree_foot01shadow"></div>
+                    <div class="tree_foot02shadow"></div>
+                    <div class="tree_foot01"></div>
+                    <div class="tree_foot02"></div>
+                </div>
+                <div id="boy"><img id="boyimg" src="images/boy_512.png" srcset="images/boy_256.png 1x, images/boy_512.png 2x, images/boy.svg 3x" alt="boy" />
+                </div>
+                <div id="girl"><img id="girlimg" src="images/girl_512.png" srcset="images/girl_256.png 1x,images/girl_512.png 2x, images/girl.svg 3x" alt="girl" />
+                </div>
+            </div>
+            <div id="leaves">
+
+            </div>
+        </div>
+    </div>
+    <div id="grass"></div>
+    <div id="sendbox"></div>
+    <div id="sendleaf" color="01">
+        <div class="leaf fullshow send" id="le_send" style="" ostyle="">
+            <div class="leaf_main">
+                <div class="leaf_back">
+                    <div class="shape_back shape_text"></div>
+                    <div class="shape_heart shape_text color01"></div>
+                </div>
+                <div class="leaf_info">
+                    <div class="leaf_text">
+                        <div id="input_text">请在这里输入您想说的话</div>
+                        <textarea id="send_text" value="" onkeyup="textChange()"></textarea>
+                    </div>
+                    <div class="leaf_name">
+                        <div id="input_name">然后写上您的名字</div>
+                        <input id="send_name" value="" onInput="nameChange()">
+                    </div>
+                    <div id="charcount01">70</div>
+                    <div id="charcount02">8</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sendbuttons">
+        <div id="button_cancel" class="button"></div>
+        <div id="button_submit" class="button"></div>
+    </div>
+    <div id="notification">
+        <div id="notiarea" class="greenback">
+            <div id="notiimage" class="icon_happy"></div>
+            <div id="notimessage">欢迎您!</div>
+        </div>
+    </div>
+    <div id="test"></div>
+
+    <script src="js/leaves.js"></script>
+    <script>
+        function fontLoad() {
+            if ($("#test").width() > 140) {
+                init();
+            } else {
+                setTimeout("fontLoad()", 500);
+            }
+        }
+
+        var leavesCount = 0;
+        var fullLeafId = -1;
+        var lastLeafId = -1;
+
+        $(document).ready(function () {
+            var i;
+
+            fontLoad();
+
+            $("#boyimg").load(function () {
+                $("#boyimg").fadeIn();
+            });
+            $("#girlimg").load(function () {
+                $("#girlimg").fadeIn();
+            });
+
+        });
+    </script>
+</body>
+
+</html>

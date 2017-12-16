@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Paper Stack</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+<div class="container">
+	<section id="content">
+		<form method="post">
+			<h1>Rigister Form</h1>
+			<div class="form-group">
+				<input type="text" class="form-control" name="username" placeholder="<% if(usertip==1){ %>
+						请输入正确格式的用户名<% }else{ %>用户名<% } %>"  >
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" name="password" placeholder="<% if(usertip==2){ %>
+						请输入正确格式的密码<% }else{ %>密码<% } %>">
+			</div>
+			<div>
+				<input type="password" class="form-control" name="passwordRepeat" placeholder="确认密码">
+
+			</div>
+			<div>
+				<input type="submit" value="Rigister" />
+				<a href="/login">Login</a>
+			</div>
+		</form><!-- form -->
+
+	</section><!-- content -->
+</div><!-- container -->
+</body>
+</html>

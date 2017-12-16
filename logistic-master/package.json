@@ -1,0 +1,33 @@
+{
+  "name": "logistic",
+  "version": "1.0.0",
+  "description": "based on wechat school app, logistic ",
+  "main": "logistic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ynull/logistic.git"
+  },
+  "keywords": [
+    "wechat"
+  ],
+  "author": "yc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ynull/logistic/issues"
+  },
+  "homepage": "https://github.com/Ynull/logistic#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "connect-mongo": "^1.2.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "express-xml-bodyparser": "^0.3.0",
+    "mongodb": "^2.1.18",
+    "mongoose": "^4.4.20",
+    "xml2js": "^0.4.16"
+  }
+}

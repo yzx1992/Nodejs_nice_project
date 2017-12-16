@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+<div class="container">
+    <section id="content">
+        <form method="post">
+            <h1>Login Form</h1>
+            <div>
+                <input type="text" class="form-control" name="username" placeholder="<% if(flag==1){ %>
+							   该用户不存在<% }else{ %>用户名<% } %>">
+            </div>
+            <div>
+                <input type="password" class="form-control" name="password" placeholder="<% if(flag==2){ %>
+							   密码错误<% }else{ %>密码<% } %>">
+            </div>
+            <div>
+                <input type="submit" value="Log in" />
+                <a href="#">Lost your password?</a>
+                <a href="/register">Register</a>
+            </div>
+        </form><!-- form -->
+        <div class="button">
+            <a href="#">欢迎登陆淘书吧</a>
+        </div><!-- button -->
+    </section><!-- content -->
+</div><!-- container -->
+</body>
+</html>

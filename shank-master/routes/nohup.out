@@ -1,0 +1,46 @@
+1
+listen 4000
+{ access_token: 'oZrlvXTa1BtN3Huv815AmMnX-dl1U7znPHyvsb3YRVfFefErloj7qOWz_SEL3eg9',
+  expires_in: 7200 }
+result[object Object]
+userid[0] = 0
+userid[1] = 0
+userid[2] = 0
+userid[3] = 0
+userid[4] = 0
+userid[5] = 0
+userid[6] = 0
+userid[7] = 0
+userid[8] = 0
+userid[9] = 0
+userid[10] = 0
+userid[11] = 0
+userid[12] = 0
+userid[13] = 0
+userid[14] = 0
+userid[15] = 0
+userid[16] = 0
+userid[17] = 0
+userid[18] = 0
+userid[19] = 0
+userid1501210970
+ress:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799238329</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[预约成功！你的预约号为1]]></Content></xml>
+result[object Object]
+userid[0] = 1501210970
+ress:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799241742</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[取消预约成功！]]></Content></xml>
+ress111111:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799241742</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[取消预约成功！]]></Content></xml>
+ress2:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799241742</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[取消预约成功！]]></Content></xml>
+ress111111:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799243394</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你未预约，不能取消！]]></Content></xml>
+ress2:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799243394</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你未预约，不能取消！]]></Content></xml>
+ress111111:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799245061</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你未预约，不能取消！]]></Content></xml>
+ress2:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799245061</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你未预约，不能取消！]]></Content></xml>
+ress:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799246145</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你好！当前预约校车人数为0]]></Content></xml>
+ress:<xml><ToUserName><![CDATA[1501210970]]></ToUserName><FromUserName><![CDATA[wx1d3765eb45497a18]]></FromUserName><CreateTime>1465799248224</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[行车安排如下：
+北大（中关村）---学院（大兴）发车时间:
+早上7:20、中午13:00
+乘车地点：北京大学理教西侧学院
+学院（大兴）---北大（中关村）发车时间:
+中午11:40、下午17:10
+乘车地点：软微学院研发楼北侧
+提示：学生需排队，待老师上车后，学生依次上车。]]></Content></xml>
+欢迎使用Shank约车应用！

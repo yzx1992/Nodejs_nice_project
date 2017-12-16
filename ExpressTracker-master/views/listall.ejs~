@@ -1,0 +1,18 @@
+<%- include header %>
+<div class="bd">
+	<div class="weui_cells_title">请求列表</div>
+    <div class="weui_panel weui_panel_access">
+        <div class="weui_panel_bd">
+         	<% result.forEach(function (msg,index) { %>
+            <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+                <div class="weui_media_hd">
+                    <img class="photo" src="<%= msg.img %>" alt="">
+                </div>
+                <div class="weui_media_bd">
+                    <p class="weui_media_desc">
+                    	<%= msg.address %> <%= msg.company %> <%= msg.usrname %> <%= msg.telephone %>
+                    </p>
+                </div>
+            </a>
+            	<% }) %>
+<%- include footer%>

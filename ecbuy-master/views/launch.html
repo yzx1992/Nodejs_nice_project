@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发起凑单</title>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="http://cdn.staticfile.org/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+<div ng-app="app" ng-controller="ctrl" >
+    <div>
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container" ng-model="user">
+                <img src="{{user.headUrl}}" style="width: 50px;height: 50px;"><label>{{user.nickname}}</label>
+            </div>
+        </nav>
+    </div>
+    <form class="form-horizontal" action="/launch" method="post">
+        <div class="form-group">
+            <label for="select1" class="col-xs-2 col-md-2 control-label">商家</label>
+            <div class="col-xs-10 col-md-10">
+                <select ng-model="mall" ng-options="m.name for m in messages track by m.id" class="form-control" id="select1" name="mall">
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="textarea1" class="col-xs-2 col-md-2 control-label">备注</label>
+            <div class="col-xs-10 col-md-10">
+                <textarea class="form-control" id="textarea1" name="details"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTel1" class="col-xs-2 col-md-2 control-label">最低价格</label>
+            <div class="col-xs-10 col-md-10">
+                <input name="minprice" type="number" class="form-control" id="inputTel1" placeholder="最低价格" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTel2" class="col-sm-2 control-label">最高价格</label>
+            <div class="col-xs-10 col-md-10">
+                <input name="maxprice" type="number" class="form-control" id="inputTel2" placeholder="最高价格">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTel3" class="col-xs-2 col-md-2 control-label">我的价格</label>
+            <div class="col-xs-10 col-md-10">
+                <input name="price" type="number" class="form-control" id="inputTel3" placeholder="我的价格" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-xs-10 col-md-10">
+                <button type="submit" class="btn btn-primary">完成</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    // 创 建 模 型
+    var app = angular.module('app', []);
+    // 创建控制器
+    app.controller('ctrl', function ($scope) {
+        var Msgs = [];
+        var socket = io.connect('/');
+        socket.emit('getUserInfo');
+        socket.on('userInfo',function (info) {
+            $scope.$apply(function() {
+                $scope.user = info;
+            });
+        })
+        socket.emit('getMallList');
+        socket.on('mallList',function (mallList) {
+            for(var i=0;i<mallList.length;i++){
+                //alert(mallList[i].id);
+                var m={
+                    id:mallList[i].id,
+                    name:mallList[i].name
+                }
+                Msgs.push(m);
+            }
+            $scope.$apply(function() {
+                $scope.messages =Msgs;
+            });
+        })
+    });
+</script>
+</body>
+</html>

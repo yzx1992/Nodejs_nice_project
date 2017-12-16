@@ -1,0 +1,15 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/Ynull/logistic",
+  "authors": [
+    "Ynull <ycnevergiveup@163.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "weui": "^0.4.2",
+    "zepto.js": "^1.1.6"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "search_around",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "emoji-cli": "^0.2.0",
+    "emoji-mood": "^1.0.2",
+    "express": "^4.13.4",
+    "get-emoji": "^2.0.0",
+    "request": "^2.72.0",
+    "tmpl": "^1.0.4",
+    "wechat-crypto": "0.0.2",
+    "xml2js": "^0.4.16"
+  }
+}

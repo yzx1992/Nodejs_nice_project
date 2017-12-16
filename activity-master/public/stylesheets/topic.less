@@ -1,0 +1,130 @@
+.topic-title{
+  padding: 5px;
+  margin: 15px;
+  font-size: 18px;
+  color: #2c3e50;
+  line-height: 1.5;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  text-align: center;
+}
+.topic-avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.topic-author-info{
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 15px;
+  color: #34495e;
+  font-size: 12px;
+  display: flex;
+}
+.topic-content{
+  border-bottom: solid 1px #d4d4d4;
+}
+.topic-count-section{
+  padding-bottom: 20px;
+  padding-left: 20px;
+  border-bottom: solid 1px #d4d4d4;
+}
+.topic-join-section{
+  border-bottom: solid 1px #d4d4d4;
+}
+.topic-joined-icons{
+  text-align: center;
+  //background-color: #00B7FF;
+  padding-top: 20px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  .topic-joined-icon{
+    padding: 5px;
+  }
+}
+.topic-join-button-area{
+  text-align: center;
+  padding: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  .topic-join-button-img{
+    background-color: #00ee00;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  .topic-join-button{
+    width: 120px;
+    height: 40px;
+    font-size: x-large;
+    background: #d03e3e;
+    border-color: #d03e3e;
+    border-radius: 5%;
+    border: 1px solid transparent;
+  }
+}
+.topic-reply-button{
+  display: inline-block;
+  width: 95%;
+  height: 42px;
+  margin: 15px 0;
+  line-height: 42px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #4fc08d;
+  border: none;
+  border-bottom: 2px solid #3aa373;
+  text-align: center;
+  vertical-align: middle;
+}
+.reply-list{
+  width: 100%;
+  margin-top: 15px;
+  .reply-list-li{
+    padding-left: 20px;
+      border-bottom: solid 1px #d4d4d4;
+  }
+  .reply-list-li-main{
+    .reply-user-info{
+      display: flex;
+      .reply-avatar{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .reply-user-info-detail{
+        display: flex;
+        align-items: center;
+        .reply-user-info-detail-span{
+          display: flex;
+          justify-content: space-around;
+
+          padding-left: 15px;
+        }
+      }
+    }
+
+  }
+}
+.reply-content{
+  padding-left: 20px;
+}
+ul, li{
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+.reply-action-area{
+  text-align: center;
+  padding-top:20px;
+  .reply-textarea{
+    width :96%;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "weixin_qiyehao_80",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "0.0.3",
+    "http": "0.0.0",
+    "qs": "~6.2.0",
+    "require": "~2.4.20",
+    "tmpl": "~1.0.4",
+    "url": "~0.11.0",
+    "xml2js": "~0.4.16",
+    "express": "~4.13.4",
+    "wechat-crypto": "0.0.2",
+    "request": "~2.72.0",
+    "https": "~1.0.0",
+    "promise": "~7.1.1",
+    "gps-util": "~1.0.1"
+  }
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="http://cdn.staticfile.org/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+<div ng-app="app" ng-controller="ctrl" >
+    <div>
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container" ng-model="user">
+                <img src="{{user.headUrl}}" style="width: 50px;height: 50px;"><label>{{user.nickname}}</label>
+            </div>
+        </nav>
+    </div>
+    <form class="form-horizontal" action="/register" method="post">
+        <div class="form-group">
+            <label for="inputText1" class="col-xs-2 col-md-2 control-label">学号</label>
+            <div class="col-xs-10 col-md-10">
+                <input name="sid" type="text" class="form-control" id="inputText1" placeholder="学号">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputText2" class="col-xs-2 col-md-2 control-label">微信号</label>
+            <div class="col-xs-10 col-md-10">
+                <input name="weixin" type="text" class="form-control" id="inputText2" placeholder="微信号">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTel1" class="col-xs-2 col-md-2 control-label">电话</label>
+            <div class="col-xs-10 col-md-10">
+                <input name="tel" type="tel" class="form-control" id="inputTel1" placeholder="电话">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-xs-10 col-md-10">
+                <button type="submit" class="btn btn-primary">完成</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    // 创 建 模 型
+    var app = angular.module('app', []);
+    // 创建控制器
+    app.controller('ctrl', function ($scope) {
+        var Msgs = [];
+        var socket = io.connect('/');
+        socket.emit('getUserInfo');
+        socket.on('userInfo',function (info) {
+            $scope.$apply(function() {
+                $scope.user = info;
+            });
+        })
+    });
+</script>
+</body>
+</html>

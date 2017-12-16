@@ -1,0 +1,67 @@
+body {
+	background-color: #fbf9fe;
+}
+
+.page_title {
+	text-align: center;
+    font-size: 34px;
+    color: #3cc51f;
+    font-weight: 400;
+    margin: 0 15%;
+    padding: 2em 0;
+}
+
+.weui_cells_title {
+	font-size:18px;
+}
+
+.weui_cells {
+	background-color: #FFFFFF;
+}
+
+.weui_msg {
+	margin-top:20%;
+}
+
+.photo {
+	width: 50px;
+    margin: 5px;
+    display: block;
+    	border-radius:50%; 
+    overflow:hidden
+}
+
+.weui_media_desc {
+	font-size:18px ! important;
+}
+
+.ft {
+content: " ";
+    display: inline-block;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 10px;
+    width: 10px;
+    border-width: 2px 2px 0 0;
+    border-color: #C8C8CD;
+    border-style: solid;
+    position: relative;
+    top: -2px;
+    top: -1px;
+    margin-left: .3em;
+}
+
+.button_bar {
+	width:90%;
+	text-align:center;
+	padding:10px 0;
+	margin-top:10px;
+}
+
+.btn_bar {
+	text-align: center;
+	line-height: 42px;
+	padding:15px 15%;	
+	margin:0;
+	color:white;
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Wish Tree",
+  "version": "1.0.1",
+  "description": "A wish tree allows people to post their words about love and wishes.",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+  "author": {
+    "name": "Apollo Wayne",
+    "email": "apollo.wayne@pku.edu.cn",
+    "url": "https://shinerising.github.io"
+  },
+  "homepage": "https://lovewall-shinerising.rhcloud.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shinerising/Message-Wall"
+  },
+
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+
+  "dependencies": {
+    "express": "~4.13.4",
+    "express-session": "~1.13.0",
+    "mongoose": "~4.4.10",
+    "body-parser": "~1.15.0",
+    "connect-mongo": "~1.1.0",
+    "cookie-parser": "~1.4.1",
+    "bad-words-chinese": "~1.0.0"
+  },
+  
+  "devDependencies": {},
+  "bundleDependencies": [],
+
+  "private": true,
+  "main": "server.js",
+
+  "scripts": {
+    "start": "node server.js"
+  }
+}

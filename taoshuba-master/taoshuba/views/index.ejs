@@ -1,0 +1,60 @@
+﻿<%- include header %>
+
+<div class="container">
+    <% if(user){%>
+    <div class="pull-left">
+        <span><button class="btn btn-default center-block"><a href="/">所有书单</a></button></span>
+        <span><button class="btn btn-default center-block"><a href="/mybook">我的书单</a></button></span>
+    </div>
+
+    <div class="pull-right">
+            <button class="btn btn-default center-block"><a href="/search">搜书</a></button>
+    </div>
+    <div class="row">
+        <table class="table table-striped" id="mytable">
+            <caption>书籍列表</caption>
+            <thead>
+            <tr>
+                <th>书名</th>
+                <th>作者</th>
+                <th>书主</th>
+                <th>电话</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% books.forEach(function(book) {%>
+            <tr>
+                <td>
+                    <a href="/detail/<%= book._id %>"><%= book.title %></a>
+                </td>
+                <td><%= book.author %></td>
+                <td><%= book.owner %></td>
+                <td><%= book.phone %></td>
+                <% if(user.username==book.username){%><td><a href="/delete/<%= book._id %>">删除</a></td> <% }; %>
+            </tr>
+            <% }); %>
+            </tbody>
+        </table>
+        <a id="btn0"></a>
+        <input id="pageSize" type="text" size="1" maxlength="2" value="getDefaultValue()"/>
+        <a> 条 </a> <a href="#" id="pageSizeSet">设置</a>
+        <a id="sjzl"></a>
+        <a  href="#" id="btn1">首页</a>
+        <a  href="#" id="btn2">上一页</a>
+        <a  href="#" id="btn3">下一页</a>
+        <a  href="#" id="btn4">尾页</a>
+        <a>转到 </a>
+        <input id="changePage" type="text" size="1" maxlength="4"/>
+        <a>页 </a>
+        <a  href="#" id="btn5">跳转</a>
+    </div>
+    <% } else { %>
+    <div class="jumbotron">
+    <h1>欢迎登陆淘书吧</h1>
+
+    <p>愿你的生活有我</p>
+    </div>
+
+    <% } %>
+</div>
+<%- include footer %>

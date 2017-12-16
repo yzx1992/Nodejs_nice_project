@@ -1,0 +1,18 @@
+﻿ create table user(
+id INT NOT NULL AUTO_INCREMENT,
+ name varchar(25) ,
+gender varchar(10),
+StudentID  varchar(30),
+departmentID varchar(10),
+ mobile varchar(40),
+Create_time date,
+ primary key(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+

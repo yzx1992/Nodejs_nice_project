@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  </head>
+  <body>
+  <div ng-app="myApp" id="app" class="main-page" ng-controller="myAppController">
+    <nav id="menu" class="menu">
+      <%include menu.ejs%>
+    </nav>
+    <main id="panel">
+      <div class="main-page-block">
+        <!--header-->
+        <%include header.ejs%>
+
+        <!--body-->
+        <section class="main-page-body">
+          <li>s</li>
+          <li>s</li>
+          <li>s</li>
+          <li>s</li>
+          <li>s</li>
+        </section>
+      </div>
+    </main>
+    </div>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/slideout/dist/slideout.js"></script>
+  <script>
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 256,
+    'tolerance': 70
+  });
+
+  var app = angular.module('myApp',[]);
+    app.controller('myAppController', function ($scope,$http) {
+      $scope.slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70
+      });
+      /**
+       *  点击menu按钮
+       * */
+      $scope.toggleClick = function(){
+        slideout.toggle();
+      }
+      $scope.getPosts = function () {
+        var url = "/posts";
+        $scope.start = 0;
+        $http.get(url).success(function (res) {
+
+        });
+      }
+//      $scope.getPosts();
+    });
+  </script>
+    <script src="/javascripts/main.js"></script>
+  </body>
+</html>

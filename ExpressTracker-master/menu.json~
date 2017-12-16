@@ -1,0 +1,19 @@
+{
+    "button": [
+        {
+            "name": "求取", 
+            "type": "view", 
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3b414e758f37593&redirect_uri=http://120.27.123.90:3001/post&response_type=code&scope=snsapi_userinfo#wechat_redirect"
+        }, 
+        {
+            "name": "帮取", 
+            "type": "view", 
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3b414e758f37593&redirect_uri=http://120.27.123.90:3001/list&response_type=code&scope=snsapi_userinfo#wechat_redirect"
+        }, 
+        {
+            "name": "我的", 
+            "type": "view", 
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb3b414e758f37593&redirect_uri=http://120.27.123.90:3001/my&response_type=code&scope=snsapi_userinfo#wechat_redirect"
+        }
+    ]
+}

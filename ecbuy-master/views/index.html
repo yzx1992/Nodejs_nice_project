@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>验证</title>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="http://cdn.staticfile.org/jquery/2.1.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+<div ng-app="app" ng-controller="ctrl" >
+    <input type="text" ng-model="msg" placeholder="请输入文字">
+    <button ng-click="toggle()">发送</button>
+
+    <ul>
+        <li ng-repeat="message in messages track by $index">
+            {{message}}
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    // 创 建 模 型
+    var app = angular.module('app', []);
+    // 创建控制器
+    app.controller('ctrl', function ($scope) {
+        var Msgs = [];
+        var socket = io.connect('/');
+        socket.emit('getAllMessages');
+        socket.on('connected', function () {
+            console.log('connected: connected to myChat')
+        });
+        socket.on('newClient', function (socket) {
+            console.log('newClient: ', socket);
+        });
+        socket.on('allMessages', function (messages) {
+            console.log('allMessages->messages: ', messages);
+            Msgs = messages.slice()
+            $scope.$apply(function() {
+                $scope.messages = Msgs;
+            });
+        });
+        socket.on('newMessage', function (message) {
+            console.log('Get a new message: ', message);
+            Msgs.push(message)
+            $scope.$apply(function() {
+                $scope.messages = Msgs;
+            });
+        });
+        $scope.toggle = function () {
+            socket.emit('addMessage',$scope.msg);
+        };
+    });
+</script>
+</body>
+</html>

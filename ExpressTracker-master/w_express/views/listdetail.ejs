@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name ="viewport" content = "initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <title>帮取页面</title>
+    <link rel="stylesheet" href="https://weui.io/weui.css"/>
+    <link rel="stylesheet" href="https://weui.io/example.css"/>
+</head>
+<body>
+<div class="container" id="container"><div class="cell">
+        <div class="hd">
+            <h1 class="page_title">快递帮帮取</h1>
+        </div>
+        <div class="bd">
+            <div class="weui_cells">
+                <div class="weui_cell">
+                    <div class="weui_cell_hd"><img src="<%= result.img%>" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p><%= result.usrname%>的<%= result.company%>快递,手机号是<%= result.telephone%> </p>
+                    </div>
+
+                    <div class="weui_cell_ft"><%= result.address%></div>
+                </div>
+
+            </div>
+        </div>
+
+        <a href="javascript:void(0);" class="weui_btn weui_btn_primary" id="showDialog1" onclick="showDialog('dialog<%= result.id%>')">点击领取</a>
+
+        <div class="weui_dialog_confirm" id="dialog<%= result.id%>" style="display: none;">
+            <div class="weui_mask"></div>
+            <div class="weui_dialog">
+                <div class="weui_dialog_hd">
+                    <strong class="weui_dialog_title">请求确认</strong>
+                </div>
+                <div class="weui_dialog_bd">
+                    <%= result.address %> <%= result.company %> <%= result.usrname %> <%= result.telephone %>
+                </div>
+                <div class="weui_dialog_ft">
+                    <a href="javascript:void(0);" onclick="javascript:hideDialog('dialog<%= result.id%>');" class="weui_btn_dialog default">取消</a>
+                    <a href="/receive?msgid=<%= result.id%>" onclick="javascript:hideDialog('dialog<%= result.id%>');" class="weui_btn_dialog primary">确定</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    function showDialog(id) {
+        document.getElementById(id).style.display="block";
+    }
+    function hideDialog(id) {
+        document.getElementById(id).style.display="none";
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

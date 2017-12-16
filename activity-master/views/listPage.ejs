@@ -1,0 +1,48 @@
+<title><%=title%></title>
+<link rel="stylesheet" href="/stylesheets/topicList.css">
+<!--<link rel="stylesheet" href="/stylesheets/test.css">-->
+<!--<link rel="stylesheet" href="/stylesheets/style.css">-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+<div ng-app="topicListApp" ng-controller="topicListController" >
+    <ul>
+        <li class="topic-list-li" style="list-style-type:none"  ng-repeat="topic in topics">
+            <a ng-href="/topicPage/{{topic.id}}" target="mainBodyFrame">
+                <h3 style="font-size: x-large">{{topic.title}}</h3>
+                <div class="topic-list-content">
+                    <img class="topic-list-avatar" ng-src="{{topic.author.headimgurl}}">
+                    <div class="topic-list-info">
+                        <p class="topic-list-p">
+                            <span class="name">{{topic.author.nickname}}</span>
+                            <span class="status">{{topic.joined}}</span>
+                        </p>
+                        <p class="topic-list-p">
+                            <time>{{topic.createdAt}}</time>
+                            <!--<time></time>-->
+                        </p>
+                    </div>
+                    <!--<div class="topic-joined-count">-->
+                        <!--<p>{{topic.replyCount}} 人</p>-->
+                    <!--</div>-->
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script>
+    var app = angular.module('topicListApp',[]);
+    app.controller('topicListController', function ($scope,$http) {
+        $scope.initTopicList = function () {
+            var type = document.title;
+            var url = "/topics?type="+type;
+            $http.get(url).success(function (res) {
+                if (res.retvalue == true){
+                    $scope.topics = JSON.parse(res.topics);
+                }else{
+                    console.log("系统错误!");
+                }
+            });
+        }
+        $scope.initTopicList();
+    })
+</script>

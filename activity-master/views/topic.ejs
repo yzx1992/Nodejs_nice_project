@@ -1,0 +1,161 @@
+<head>
+    <title><%=title%></title>
+</head>
+<body>
+<link rel="stylesheet" href="/stylesheets/topic.css">
+    <div ng-app="topicApp" ng-controller="topicController">
+        <h2 class="topic-title">{{topic.title}}</h2>
+        <section class="topic-author-info">
+            <!--<img class="topic-avatar" ng-src="{{topic.author.author_url}}">-->
+            <img class="topic-avatar" ng-src="{{topic.author.headimgurl}}">
+            <div class="topic-col">
+                <span style="padding: 10px;font-size: x-large;">{{topic.author.nickname}}</span>
+            </div>
+            <!--<div class="topic-right"></div>-->
+        </section>
+        <!-- 活动主内容 -->
+        <section class="topic-content">
+            <p style="padding: 20px">{{topic.content}}</p>
+        </section>
+        <!--活动参与人数-->
+        <h3 class="topic-count-section">
+            <strong>{{joined.length}}</strong>人参加
+        </h3>
+        <!--活动参与-->
+        <section class="topic-join-section">
+            <div class="topic-joined-icons">
+                <div  ng-repeat="user in joined">
+                    <div class="topic-joined-icon">
+                        <img class="topic-avatar" ng-src="{{user.user.headimgurl}}">
+                    </div>
+                </div>
+            </div>
+            <div class="topic-join-button-area">
+                <!--<img class="topic-join-button-img" ng-click="joinTopic()">-->
+                <button class="topic-join-button" ng-click="joinTopic()">{{joinButton}}</button>
+            </div>
+        </section>
+        <!--活动回复人数-->
+        <h3 class="topic-count-section">
+            <strong>{{replys.length}}</strong>人回复
+        </h3>
+        <!--回复-->
+        <section class="reply-list">
+            <ul>
+                <li class="reply-list-li" ng-repeat="reply in replys">
+                    <div class="reply-list-li-main">
+                        <section class="reply-user-info">
+                            <img class="reply-avatar" ng-src="{{reply.replyUser.headimgurl}}">
+                            <div class="reply-user-info-detail">
+                                <span class="reply-user-info-detail-span">
+                                    <span>{{reply.replyUser.nickname}}</span>
+                                    <span>{{reply.replyUser.createdAt}}</span>
+                                </span>
+                                <span>
+
+                                </span>
+                            </div>
+                        </section>
+                        <div class="reply-content">
+                            <p>{{reply.content}}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!--输入-->
+        <section class="reply-action-area">
+            <textarea class="reply-textarea" ng-model="replyContent"></textarea>
+            <button class="topic-reply-button" ng-click="replyClick()">回复</button>
+        </section>
+    </div>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script>
+    var app = angular.module('topicApp',[]);
+    app.controller('topicController', function ($scope, $http) {
+        var replyList = [];
+        var joinedList = [];
+        var isJoined = false;
+        $scope.initTopicPage = function () {
+            var url = "/topic/"+document.title;
+            $http.get(url).success(function (res) {
+                if (res.retvalue == true){
+
+                    $scope.topic = res.topic;
+                    $scope.joined  = res.join;
+//                    alert(parseJoinList(res.join));
+                    joinedList = res.join;
+                    replyList = res.replys;
+                    $scope.replys = res.replys;
+                    isJoined =res.isJoin;
+                    if (res.isJoin){
+                        $scope.joinButton = "取消";
+                    }else{
+                        $scope.joinButton = "参加";
+                    }
+                }else{
+                    alert("系统错误!");
+                }
+            });
+        }
+
+        //加入活动
+            $scope.joinTopic = function () {
+                    var url = '';
+                    if(isJoined){
+                        //已经参加
+                        url = "/cancelJoin";
+
+                        isJoined = false;
+                    }else{
+                        //未参加
+                        url = '/join';
+
+                        isJoined = true;
+                    }
+                    var data = {
+                        topicID : $scope.topic.id
+                    }
+                    $http.post(url,data).success(function (res) {
+                        if (res.retvalue == true){
+                            if (res.isJoin == true){
+                                $scope.joinButton = "取消";
+                            }else{
+                                $scope.joinButton = "参加";
+                            }
+//                            joinedList.push(res.user);
+//                            alert(JSON.stringify(res));
+//                            joinedList = res
+//                              joinedList = res.join;
+//                            alert(JSON.stringify(joinedList));
+//                            $scope.$apply(function() {
+//                                $scope.joined = joinedList;
+//                            });
+                            $scope.joined = res.join;
+                        }else{
+                            alert("系统错误!");
+                        }
+                    });
+            }
+            $scope.replyClick  = function(){
+                var url = '/reply';
+                var data = {
+                    topicID : $scope.topic.id,
+                    replyContent:$scope.replyContent
+                }
+                $http.post(url,data).success(function(res){
+                    if (res.retvalue == true){
+                        $scope.replyContent = "";
+                        replyList.push(res.reply);
+                        $scope.$apply(function() {
+                            $scope.replys = replyList;
+                        });
+                    }else{
+                        alert("系统错误!");
+                    }
+                });
+            }
+        $scope.initTopicPage();
+    });
+</script>
+</body>

@@ -1,0 +1,19 @@
+{
+    "button": [
+        {
+            "name": "求取", 
+            "type": "view", 
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1d3765eb45497a18&redirect_uri=http://www.sunnyqingrixiaozi.cn:3001/post&response_type=code&scope=snsapi_base#wechat_redirect"
+        }, 
+        {
+            "name": "帮取", 
+            "type": "view", 
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1d3765eb45497a18&redirect_uri=http://www.sunnyqingrixiaozi.cn:3001/list&response_type=code&scope=snsapi_base#wechat_redirect"
+        }, 
+        {
+            "name": "我的", 
+            "type": "view", 
+            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1d3765eb45497a18&redirect_uri=http://www.sunnyqingrixiaozi.cn:3001/my&response_type=code&scope=snsapi_base#wechat_redirect"
+        }
+    ]
+}

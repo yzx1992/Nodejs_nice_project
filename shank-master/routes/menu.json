@@ -1,0 +1,19 @@
+{
+ "button":[  
+    {  
+      "type":"click",  
+      "name":"预约*******",  
+      "key":"yuyue"  
+    },  
+    {  
+      "type":"click",  
+      "name":"当前人数",  
+      "key":"renshu"  
+    },  
+    { 
+      "type":"click",
+      "name":"行车安排",
+      "key":"anpai"  
+    }  
+      ]  
+ }  

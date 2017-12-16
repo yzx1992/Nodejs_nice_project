@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+
+<div class="post-app" ng-app="postApp" ng-controller="postController">
+    <div id="user_openid" style="display: none"><%=user_openid%></div>
+    <div class="post-body-line">
+        <input ng-model="title" name="title" id="title" type="text">
+
+    </div>
+    <textarea rows="35" class="post-body-content" ng-model="content"></textarea>
+    <button class="post-body-button" ng-click="submitTopic()">发布</button>
+</div>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+    var postApp = angular.module('postApp',[]);
+    postApp.controller('postController',function($scope,$http){
+        $scope.submitTopic = function () {
+            var data = {
+                title : $scope.title,
+                content : $scope.content,
+                openid:$('#user_openid').text().replace("\"","").replace("\"","")
+            }
+            if($scope.title == ""||$scope.title==undefined){
+                alert("请输入标题!");
+                return false;
+            }
+            if ($scope.content == ""|| $scope.content == undefined){
+                alert("请输入正文!");
+                return false;
+            }
+            $http.post('/topic',data).success(function (res) {
+                if (res.retvalue == true){
+                    var topicID = res.topic.id;
+                    window.location.href = "/topicPage/"+topicID;
+                }else{
+                    alert("保存失败!"+JSON.stringify(res));
+                    return false;
+                }
+            })
+        }
+    });
+</script>

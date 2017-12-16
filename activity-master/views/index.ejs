@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	<title><%=title%></title>
+	<!--<link rel="stylesheet" type="text/css" href="/stylesheets/normalize.css" />-->
+	<!--<link rel="stylesheet" type="text/css" href="/stylesheets/default.css">-->
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="/stylesheets/test.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<!--[if IE]>
+	<!--<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>-->
+	<![endif]-->
+</head>
+<body ng-app="myApp" ng-controller="myController">
+	<!--left menu-->
+	<%include menu.ejs%>
+	<!-- main panel-->
+    <main id="main" class="panel">
+		<!--header-->
+		<%include header.ejs%>
+		<!--body-->
+		<%include body.ejs%>
+    </main>
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/slideout/dist/slideout.js"></script>
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+		app.controller('myController', function ($scope,$http) {
+			$scope.initUserInfo = function () {
+				$http.get('/user').success(function(res){
+					if(res.retvalue == true){
+						if (res.user == undefined){
+							$scope.initUserInfo();
+						}else{
+							//返回用户信息
+							$scope.user = res.user;
+						}
+					}
+				});
+			}
+			$scope.initUserInfo();
+			$scope.topics = function (type) {
+				$scope.header = type;
+			}
+
+		});
+		var slideout = new Slideout({
+	        'panel': document.getElementById('main'),
+	        'menu': document.getElementById('menu'),
+	        'padding': 256,
+	        'tolerance': 70
+	      });
+//	      document.querySelector('.js-slideout-toggle').addEventListener('click', function() {
+//			  slideout.toggle();
+//		  });
+	      document.querySelector('.menu').addEventListener('click', function(eve) {
+	        if (eve.target.nodeName === 'A') { slideout.close(); }
+	      });
+	     function aload(t){"use strict";t=t||window.document.querySelectorAll("[data-aload]"),void 0===t.length&&(t=[t]);var a,e=0,r=t.length;for(e;r>e;e+=1)a=t[e],a["LINK"!==a.tagName?"src":"href"]=a.getAttribute("data-aload"),a.removeAttribute("data-aload");return t}
+	    window.onload = function(){
+			if(window.location.href.indexOf('?') < 0){
+				//如果点击首页,跳转至授权页面
+				window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx575b7c667c304a1b&redirect_uri=http%3a%2f%2fsspku.xinhaokids.com%2f&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+				return false;
+			};
+//	    	aload();
+//	    	document.querySelector('.iphone').className += ' shown';
+	    }
+		function toggleClick(){
+			slideout.toggle();
+		}
+	</script>
+</body>
+</html>
